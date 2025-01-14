@@ -14,10 +14,10 @@ int RFib(int n){
 
 void multiply(int arr1[2][2],int arr2[2][2]){
     int res[2][2];
-    res[0][0]=(arr1[0][0]*arr2[0][0])+(arr1[0][1]*arr2[1][0]);
-    res[0][1]=(arr1[0][0]*arr2[0][1])+(arr1[0][1]*arr2[1][1]);
-    res[1][0]=(arr1[1][0]*arr2[0][0])+(arr1[1][1]*arr2[1][0]);
-    res[1][1]=(arr1[1][0]*arr2[0][1])+(arr1[1][1]*arr2[1][1]);
+    res[0][0]=((arr1[0][0]*arr2[0][0])+(arr1[0][1]*arr2[1][0]))%2025;
+    res[0][1]=((arr1[0][0]*arr2[0][1])+(arr1[0][1]*arr2[1][1]))%2025;
+    res[1][0]=((arr1[1][0]*arr2[0][0])+(arr1[1][1]*arr2[1][0]))%2025;
+    res[1][1]=((arr1[1][0]*arr2[0][1])+(arr1[1][1]*arr2[1][1]))%2025;
 
     arr1[0][0]=res[0][0];
     arr1[0][1]=res[0][1];
@@ -40,7 +40,7 @@ int CleverFib(long int n){
     if(n<=1) return n;
     int arr[2][2]={{1,1},{1,0}};
     PowerOf(arr,n-1);
-    return (arr[0][0])%2025;
+    return arr[0][0];
 }
 
 int TrivialGCD(int a, int b){
