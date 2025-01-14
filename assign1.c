@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<time.h>
 
 int max(long int a,long int b){
     return (a>b)?a:b;
